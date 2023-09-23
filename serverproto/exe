@@ -1,2 +1,1 @@
 java -cp target/serverproto-1.0-SNAPSHOT.jar com.serverproto.App
-java -cp target/serverproto-1.0-SNAPSHOT.jar com.serverproto.App

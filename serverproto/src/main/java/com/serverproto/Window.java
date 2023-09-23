@@ -5,7 +5,10 @@ import java.awt.event.*;
 import java.awt.*;
 
 public class Window extends JFrame implements ActionListener{
-    
+
+    JTextArea       textField;
+    JLabel          label;
+    JButton         button;
     JMenuBar        menuBar;
     JMenu           menuConfig, menuHelp;
     JMenuItem       itemProfile, itemServer, itemApplication, itemAbout;
@@ -23,12 +26,14 @@ public class Window extends JFrame implements ActionListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(null);
 		setSize(650,500);
-		setResizable(true);
+		setResizable(false);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int centerX = (int) ((screenSize.getWidth() - getWidth()) / 2);
         int centerY = (int) ((screenSize.getHeight() - getHeight()) / 2);
         setLocation(centerX, centerY);
         
+        JTextArea textField = new JTextArea();
+        textField.setBounds(10, 10, 630, 458);
         JMenuBar menuBar = new JMenuBar();
         JMenu menuConfig = new JMenu("Configuration");
         JMenu menuHelp = new JMenu("Help");
@@ -44,6 +49,7 @@ public class Window extends JFrame implements ActionListener{
         menuBar.add(menuConfig);
         menuBar.add(menuHelp);
         this.setJMenuBar(menuBar);
+        this.add(textField);
 
     }
 
